@@ -1,0 +1,5 @@
+
+require "./meth"
+
+met()
+

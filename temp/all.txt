@@ -1,0 +1,206 @@
+2015/12/18 07:18:42 -bash-4.1# cat argv.rb
+
+puts "first arg: #{ARGV[0]}"
+puts "second arg: #{ARGV[1]}"
+
+iz = ARGV[0].to_i
+io = ARGV[1].to_i
+
+p iz + io
+
+2015/12/18 07:18:49 -bash-4.1# cat ary.rb
+
+names = []
+p names
+
+names = ["Koba", "Taro", "Wata"]
+p names
+
+p names[0]
+
+p names[1]
+
+mixed = [1, "Moji", 5.55]
+p mixed
+
+p mixed.size
+
+mixed.each do |m|
+        puts(m)
+end
+
+2015/12/18 07:19:04 -bash-4.1# cat comment.rb
+
+# これはコメント
+puts("sanzan")
+
+=begin
+  ここからコメント
+        タブ
+
+　ここまでコメント
+=end
+x = 3
+y = 4
+
+r = 3 * 4
+
+puts(r)
+
+puts("After")   # koko
+
+2015/12/18 07:19:33 -bash-4.1# cat dateCall.rb
+
+require "date"
+
+days = Date.today
+p days
+
+2015/12/18 07:19:42 -bash-4.1# cat hash.rb
+
+addr = {
+        name: "太郎",
+        kana: "たろう",
+        pref: "埼玉"
+}
+
+p addr
+
+
+addr.each do |k,v|
+        puts "#{k}=#{v}"
+end
+
+2015/12/18 07:19:59 -bash-4.1# cat hello.rb
+print("Hello!\n")
+
+print "Hello Hello\n"
+
+print('Hello, \nRuby')
+
+2015/12/18 07:20:07 -bash-4.1# cat hello2.rb
+
+puts "Hello!", "Hello!"
+
+puts("Hello!!\n")
+
+puts('Hehehe')
+2015/12/18 07:20:10 -bash-4.1# cat hello3.rb
+
+puts "100"
+
+puts 100
+
+p "100"
+
+p 100
+
+2015/12/18 07:20:12 -bash-4.1# cat meth.rb
+
+def met
+        puts("Hey")
+end
+
+#met()
+
+2015/12/18 07:20:20 -bash-4.1# cat methCall.rb
+
+require "./meth"
+
+met()
+
+2015/12/18 07:20:33 -bash-4.1# cat nihongo.rb
+
+print "日本語で書いてみる。"
+
+puts "これも日本語"
+
+2015/12/18 07:20:42 -bash-4.1# cat pp.rb
+require "pp"
+
+v = [
+        {
+                key00: "基礎",
+                key01: "応用",
+                key02: "その他"
+        },
+        {
+                key00: "基礎１",
+                key01: "応用１",
+                key02: "その他１"
+        }
+]
+
+p v
+
+pp v
+
+2015/12/18 07:20:48 -bash-4.1# cat print-yaml.rb
+#!/usr/bin/ruby
+
+###
+### print-yaml.rb
+###
+### 使い方： ruby print-yaml.rb file.yaml [file2.yaml ...]
+###
+require 'yaml'
+require 'pp'
+
+str  = ARGF.read()      # 入力をすべて読み込む
+data = YAML.load(str)   # パースする
+pp data                 # データを表示する
+
+2015/12/18 07:21:07 -bash-4.1# cat read.rb
+
+pattern = Regexp.new(ARGV[0])
+#pattern = Regexp.new("eval")
+filename = ARGV[1]
+
+file = File.open(filename)
+#text = file.read
+#puts(text)
+
+file.each_line do |line|
+        if pattern =~ line
+                puts(line)
+        end
+end
+
+file.close
+
+2015/12/18 07:21:36 -bash-4.1# cat regexp.rb
+p /test/ =~ "This is a test. That is not a text."
+
+p /Temp/i =~ "Not contains."
+
+p /temp/i =~ "TEMP is temp"
+
+2015/12/18 07:21:50 -bash-4.1# cat seigyo.rb
+
+p = 4 % 3
+
+puts(p)
+
+if p > 1 then
+        puts "Over"
+else
+        puts "Not Over"
+end
+
+2015/12/18 07:22:05 -bash-4.1# cat symbol.rb
+
+sym = :foo
+
+p sym
+
+puts(sym)
+
+2015/12/18 07:22:09 -bash-4.1# cat times.rb
+
+i = 1
+5.times do
+        puts(i)
+        i = i + 1
+end
+
+
